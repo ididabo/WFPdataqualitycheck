@@ -5,18 +5,18 @@
 
 ## 📋 Description
 
-**WFP Data Quality Check** est une application Shiny pour l'analyse de la qualité des données et la visualisation d'indicateurs clés de sécurité alimentaire dans les enquêtes du Programme Alimentaire Mondial (PAM).
+**WFP Data Quality Check** is a Shiny application for data quality analysis and visualization of key food security indicators in World Food Programme (WFP) surveys.
 
-### ✨ Fonctionnalités principales
+### ✨ Main Features
 
-- 📊 **Analyse multi-indicateurs** : FCS, HDDS, rCSI, HHS, LCS
-- 📁 **Support multi-formats** : SPSS (.sav), Excel (.xlsx/.xls), CSV, Stata (.dta), Text
-- 🗺️ **Analyse géographique** : By Admin1, Admin2, et enquêteur
-- 📈 **Visualisations interactives** : Graphiques dynamiques avec Plotly et ECharts4r
-- 📋 **Rapports exportables** : Génération automatique de rapports HTML
-- 🔍 **Contrôle qualité** : Validation automatique des données
+- 📊 **Multi-indicator analysis** : FCS, HDDS, rCSI, HHS, LCS
+- 📁 **Multi-format support** : SPSS (.sav), Excel (.xlsx/.xls), CSV, Stata (.dta), Text
+- 🗺️ **Geographic analysis** : By Admin1, Admin2, and Enumerator
+- 📈 **Interactive visualizations** : Dynamic charts using Plotly and ECharts4r and WFPTheme color palette
+- 📋 **Exportable reports** : Automatic generation of HTML reports
+- 🔍 **Quality control** : Automatic data validation
 
-### 🎯 Indicateurs supportés
+### 🎯 Supported Indicators
 
 - **FCS** (Food Consumption Score) - Score de Consommation Alimentaire
 - **HDDS** (Household Dietary Diversity Score) - Score de Diversité Alimentaire des Ménages
@@ -38,7 +38,7 @@ install.packages("your file repositories/WFPdataqualitycheck_0.2.0.tar.gz", repo
 ```
 ## Requirements
 
-The application requires datasets with standard variable names. For more information on required variables, please see the in-app documentation or refer to [this guide](https://wfp-vam.github.io/RBD_FS_CH_guide_EN/combined-questionnaire-syntaxes-for-all-5-indicators.html).
+The application requires datasets with standard variable names. For more information on required variables, please see the in-app documentation or refer to [Surveydesigner](https://www.surveydesigner.vam.wfp.org/).
 
 ## Usage
 
@@ -50,39 +50,35 @@ library(WFPdataqualitycheck)
 run_app()
 ```
 
-L'application s'ouvrira dans votre navigateur web par défaut.
+The application will open in your default web browser.
 
-## 📊 Format des données
+## 📊 Data Format
 
-### Variables requises
-
-#### Variables administratives (Obligatoires)
-- `ADMIN1Name` : Nom de la division administrative niveau 1
-- `ADMIN2Name` : Nom de la division administrative niveau 2  
-- `EnuName` : Nom/ID de l'enquêteur
+### Required Variables
+Mandatory variables are available on the main page of the application
+#### Administrative variables (Mandatory)
+ 
+- `ADMIN1Name` : Name of the first-level administrative division
+- `ADMIN2Name` : Name of the second-level administrative division 
+- `EnuName` : Enumerator name or ID
 
 #### Variables métadonnées
-- `@_submission_time` : Horodatage de soumission
-- `@_location_latitude` : Latitude GPS
-- `@_location_longitude` : Longitude GPS
+- `@_submission_time` : ubmission timestamp
 
-#### Variables d'indicateurs
+#### Indicator variables
 - **FCS** : `FCSStap`, `FCSPulse`, `FCSPr`, `FCSVeg`, `FCSFruit`, `FCSDairy`, `FCSFat`, `FCSSugar`
 - **HDDS** : `HDDSStapCer`, `HDDSStapRoot`, `HDDSVeg`, `HDDSFruit`, `HDDSPrMeat`, `HDDSPrEggs`, `HDDSPrFish`, `HDDSPulse`, `HDDSDairy`, `HDDSFat`, `HDDSSugar`, `HDDSCond`
 - **rCSI** : `rCSILessQlty`, `rCSIBorrow`, `rCSIMealSize`, `rCSIMealAdult`, `rCSIMealNb`
 - **HHS** : `HHSNoFood_FR`, `HHSBedHung_FR`, `HHSNotEat_FR`
 - **LCS** : Variables de stress, crise et urgence
 
-## 🔧 Configuration système requise
+## 🔧 System Requirements
 
 - **R** ≥ 4.0.0
-- **Dépendances** : Les packages requis seront installés automatiquement
 
-## 📝 Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## 👤 Auteur
+## 👤 Author
 
 **Idrissa Dabo**
 - 📧 Email : ididabo@gmail.com
@@ -98,13 +94,14 @@ For questions or support, please contact:
 - Alessandra Gherardelli: alessandra.gherardelli@wfp.org
 - Aliou Badara Samake: alioubadara.samake@wfp.org
 - Moctar Aboubacar: moctar.aboubacar@wfp.org
+- Virginia Leape: virginia.leape@wfp.org
 
 
 ## 🤝 Support
 
-Pour toute question ou problème :
-1. Vérifiez que vos données contiennent les variables requises
-2. Consultez la documentation intégrée dans l'application
-3. Contactez l'auteur pour support technique
+For any questions or issues:
+1. Ensure your data includes all required variables and if there from surveydesigner
+2. Refer to the in-app documentation from Github
+3. Contact one of the persons mentioned above for technical support
 
 ---
